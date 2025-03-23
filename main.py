@@ -32,8 +32,9 @@ def play():
                 pygame.quit()
                 sys.exit()
             if event.type == pygame.MOUSEBUTTONDOWN:
-                if PLAY_BACK.checkForInput(PLAY_MOUSE_POS):
-                    main_menu()
+                if pygame.mouse.get_pressed()[0]:
+                    if PLAY_BACK.checkForInput(PLAY_MOUSE_POS):
+                        main_menu()
 
         pygame.display.update()
     
@@ -58,8 +59,9 @@ def options():
                 pygame.quit()
                 sys.exit()
             if event.type == pygame.MOUSEBUTTONDOWN:
-                if OPTIONS_BACK.checkForInput(OPTIONS_MOUSE_POS):
-                    main_menu()
+                if pygame.mouse.get_pressed()[0]:
+                    if OPTIONS_BACK.checkForInput(OPTIONS_MOUSE_POS):
+                        main_menu()
 
         pygame.display.update()
 
@@ -97,13 +99,14 @@ def main_menu():
                 pygame.quit()
                 sys.exit()
             if event.type == pygame.MOUSEBUTTONDOWN:
-                if PLAY_BUTTON.checkForInput(MENU_MOUSE_POS):
-                    play()
-                if OPTIONS_BUTTON.checkForInput(MENU_MOUSE_POS):
-                    options()
-                if QUIT_BUTTON.checkForInput(MENU_MOUSE_POS):
-                    pygame.quit()
-                    sys.exit()
+                if pygame.mouse.get_pressed()[0]:
+                    if PLAY_BUTTON.checkForInput(MENU_MOUSE_POS):
+                        play()
+                    if OPTIONS_BUTTON.checkForInput(MENU_MOUSE_POS):
+                        options()
+                    if QUIT_BUTTON.checkForInput(MENU_MOUSE_POS):
+                        pygame.quit()
+                        sys.exit()
 
         pygame.display.update()
 
