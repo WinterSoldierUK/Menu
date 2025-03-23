@@ -74,10 +74,10 @@ def main_menu():
         logo_scaled = pygame.transform.smoothscale_by(logo, 0.50)
  
         # Using blit to copy content from one surface to other
-        SCREEN.blit(logo_scaled, (112, 0))
+        SCREEN.blit(logo_scaled, (112, 20))
 
-        MENU_TEXT = get_font(40).render("MAIN MENU", True, "#b68f40")
-        MENU_RECT = MENU_TEXT.get_rect(center=(320, 250))
+        #MENU_TEXT = get_font(40).render("MAIN MENU", True, "#b68f40")
+        #MENU_RECT = MENU_TEXT.get_rect(center=(320, 250))
 
         PLAY_BUTTON = Button(image=pygame.image.load("assets/Play Rect.png"), pos=(320, 320), 
                             text_input="PLAY", font=get_font(30), base_color="#d7fcd4", hovering_color="White")
@@ -86,7 +86,7 @@ def main_menu():
         QUIT_BUTTON = Button(image=pygame.image.load("assets/Quit Rect.png"), pos=(320, 560), 
                             text_input="QUIT", font=get_font(30), base_color="#d7fcd4", hovering_color="White")
 
-        SCREEN.blit(MENU_TEXT, MENU_RECT)
+        #SCREEN.blit(MENU_TEXT, MENU_RECT)
 
         for button in [PLAY_BUTTON, OPTIONS_BUTTON, QUIT_BUTTON]:
             button.changeColor(MENU_MOUSE_POS)
